@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QUẢN LÝ SÁT HẠCH TIẾNG ANH</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<div class="header">
+    <h1>QUẢN LÝ SÁT HẠCH TIẾNG ANH</h1>
+    <h2>KẾT QUẢ THEO NĂM VÀ NHÓM THI SÁT HẠCH</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <h3>Bộ lọc</h3>
+
+            <h4 class="filter-heading">Năm đánh giá</h4>
+            <select class="select2-init select2-nam_danh_gia" multiple name="năm">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+
+            <h4 class="filter-heading">Vị trí công tác</h4>
+            <select class="select2-init select2-vi_tri_cong_tac" multiple name="vị_trí_công_tác_hiện_tại">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+
+            <h4 class="filter-heading">Vị trí sát hạch</h4>
+            <select class="select2-init select2-vi_tri_sat_hach" multiple name="vị_trí_sát_hạch">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+            <h4 class="filter-heading">Mã nhân viên</h4>
+            <select class="select2-init select2-ma_nhan_vien" multiple name="mã_sinh_viên">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+            <h4 class="filter-heading">Nơi sinh</h4>
+            <select class="select2-init select2-noi_sinh" multiple name="nơi_sinh">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+            <h4 class="filter-heading">Kết quả</h4>
+            <select class="select2-init select2-ket_qua" multiple name="kết_quả">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+            <h4 class="filter-heading">Điểm</h4>
+            <select class="select2-init select2-diem" multiple name="mức_đạt">
+                <option value="*" selected>Chọn tất cả</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-9">
+            <!-- Module 1: Render Base Data -->
+            <div class="card mb-3" style="height: 550px;overflow-y:scroll ">
+                <div class="card-header">
+                    <h5 class="mb-0">Danh sách</h5>
+                </div>
+                <div class="card-body">
+                    <div id="renderTableDataBase">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2: Tính kết quả trung bình theo năm -->
+            <div class="card mb-3" style="height: 550px;overflow-y:scroll ">
+                <div class="card-header">
+                    <h5 class="mb-0">Kết quả trung bình theo năm</h5>
+                </div>
+                <div class="card-body">
+                    <div id="renderKetQuaTrungBinhTheoNam">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2: Tính kết quả trung bình theo nhóm thí sinh sát hạch -->
+            <div class="card mb-3" style="height: 550px;overflow-y:scroll ">
+                <div class="card-header">
+                    <h5 class="mb-0">Kết quả trung bình theo nhóm thí sinh sát hạch</h5>
+                </div>
+                <div class="card-body">
+                    <div id="renderKetQuaTrungBinhTheoNhomThiSinhSatHach">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 3: Tỉ lệ kết quả đạt, không đạt, không rõ -->
+            <div class="card mb-3" style="height: 550px;overflow-y:scroll ">
+                <div class="card-header">
+                    <h5 class="mb-0">Tỉ lệ đạt, không đạt</h5>
+                </div>
+                <div class="card-body">
+                    <div id="renderTiLeDatKhongDat">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./static/renderChartsAndTables.js"></script>
+<script src="./static/main.js"></script>
+
+</body>
+</html>
